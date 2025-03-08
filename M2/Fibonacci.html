@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bilangan Fibonacci</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="form-container">
+        <h2>Bilangan Fibonacci</h2>
+        <p>Masukkan sebuah angka:</p>
+        <input type="number" id="number" />
+        <button onclick="showFibonacci()">Tampilkan Bilangan Fibonacci</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function showFibonacci() {
+            const number = parseInt(document.getElementById('number').value);
+            const fibonacci = [0, 1];
+            for (let i = 2; i <= number; i++) {
+                const next = fibonacci[i - 1] + fibonacci[i - 2];
+                if (next > number) break;
+                fibonacci.push(next);
+            }
+            document.getElementById('output').innerText = `Bilangan fibonacci: ${fibonacci.join(', ')}`;
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validasi Input</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="form-container">
+        <h2>Validasi Input</h2>
+        <p>Masukkan nama, password dan alamat email anda:</p>
+        <table>
+            <tr>
+                <td>Nama:</td>
+                <td><input type="text" id="name" /></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="password" id="password" /></td>
+            </tr>
+            <tr>
+                <td>E-mail:</td>
+                <td><input type="email" id="email" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button onclick="validatePassword()">Klik</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        function validatePassword() {
+            const password = document.getElementById('password').value;
+            if (password !== 'sss') {
+                alert('Password salah');
+            } else {
+                alert('Login berhasil');
+            }
+        }
+    </script>
+</body>
+</html>

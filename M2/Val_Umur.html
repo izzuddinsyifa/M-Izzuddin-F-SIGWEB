@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validasi Nama dan Umur</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="form-container">
+        <h2>Validasi Nama dan Umur</h2>
+        <p>Masukkan nama dan umur anda:</p>
+        <table>
+            <tr>
+                <td>Nama:</td>
+                <td><input type="text" id="name" /></td>
+            </tr>
+            <tr>
+                <td>Umur:</td>
+                <td><input type="number" id="age" /></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button onclick="validateInput()">Klik</button></td>
+            </tr>
+        </table>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function validateInput() {
+            const name = document.getElementById('name').value;
+            const age = parseInt(document.getElementById('age').value);
+            const result = document.getElementById('result');
+
+            if (!name) {
+                alert('Isikan nama!!');
+                return;
+            }
+
+            if (age <= 0) {
+                result.innerText = 'Anda Game Over';
+            } else if (age <= 5) {
+                result.innerText = 'Anda masih bayi';
+            } else if (age >= 6 && age <= 15) {
+                result.innerText = 'Anda masih anak-anak';
+            } else if (age >= 16 && age <= 30) {
+                result.innerText = 'Anda masih remaja';
+            } else if (age >= 31 && age <= 60) {
+                result.innerText = 'Anda sudah dewasa';
+            } else if (age > 61) {
+                result.innerText = 'Anda sudah dewasa';
+            } else {
+                result.innerText = 'Input tidak valid';
+            }
+        }
+    </script>
+</body>
+</html>
+
