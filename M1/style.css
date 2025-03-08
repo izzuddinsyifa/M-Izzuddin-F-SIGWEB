@@ -1,0 +1,168 @@
+:root {
+    --c-dark: #3b2f2f;
+    --c-brand: #b88a44;
+    --c-brand-light: #d19d4f;
+    --c-brand-rgb: 227, 193, 119;
+    --c-body: #e1dad0;
+    --c-body-rgb: 225, 218, 208;
+    --c-accent: #658d65;
+    --c-accent-rgb: 101, 141, 101;
+    --c-bg: #efe1cb;
+    
+    /* Improved Typography */
+    --font-base: sans-serif;
+    --font-secondary:sans-serif;
+    
+    /* Enhanced Responsive Variables */
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --transition: all 0.5s ease;
+    --border-radius: 10px;
+}
+
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: var(--font-secondary);
+    line-height: 1.7;
+    font-size: 1rem;
+    position: relative;
+    background: whitesmoke;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+    opacity: 1;
+}
+
+h1, .h1 {
+    z-index: 2;
+    position: relative;
+    color: var(--c-dark);
+    font-weight: 400;
+    font-family: var(--font-base);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+h2, .h2 {
+    z-index: 2;
+    position: relative;
+    color: var(--c-dark);
+    font-weight: 600;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+h3, .h3 {
+    z-index: 2;
+    position: relative;
+    color: var(--c-dark);
+    font-weight: 600;
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+}
+
+h4, h5, h6, .h4, .h5, .h6 {
+    z-index: 2;
+    position: relative;
+    color: rgb(192, 192, 192);
+    font-size: smaller;
+}
+
+h7, h8, h9, h10, .h7, .h8, .h9, .h10 {
+    z-index: 2;
+    position: relative;
+    color: var(--c-dark);
+    font-weight: 600;
+    display: block;
+}
+
+h11, .h11 {
+    z-index: 2;
+    position: relative;
+    font-family: 'IM FELL English SC';
+    color: var(--c-brand-light);
+    -webkit-text-stroke: #3b2f2f;
+    -webkit-text-stroke-width: 1px;
+    font-size: clamp(1.25rem, 3vw, 1.75rem);
+    font-style: oblique;
+}
+
+h12, .h12 {
+    z-index: 2;
+    position: relative;
+    font-family: 'IM FELL English SC';
+    color: var(--c-accent);
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    display: block;
+}
+
+h12.dark, .h12.dark {
+    color: var(--c-dark);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: var(--c-brand);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+
+a:hover {
+    color: var(--c-brand-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+}
+
+.section-padding {
+    padding-top: clamp(80px, 10vw, 140px);
+    padding-bottom: clamp(80px, 10vw, 140px);
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-box {
+    position: absolute;
+    width: 800px;
+    height: auto;
+    left: 50%;
+    transform: translate(-50%, -39%);
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translate(-50%, -39%);
+    -moz-transform: translate(-50%, -39%);
+    -ms-transform: translate(-50%, -39%);
+    -o-transform: translate(-50%, -39%);
+}
+
+.header{
+    box-shadow: #3b2f2f;
+    text-align: center;
+    background-color: var(--c-brand);
+    font-size: large;
+    color: antiquewhite;
+}
+
