@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LeafletJS</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://open-source.extive.eu/micro-interaction-theme.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" ></script>
+    <style>
+        #map {
+            width: 100%;
+            height: 1024px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map">
+        <script>        
+            var map = L.map('map',{ 
+            center: [-7.79558, 110.36949], 
+            zoom: 12 
+            }); 
+    
+            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <ahref="http://osm.org/copyright">OpenStreetMap</ahref=> contributors' }).addTo(map); 
+        </script>
+    </div>
+    
+
+    <script src="https://open-source.extive.eu/micro-interaction.js'"></script>
+    <script src="" async defer></script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackfish - Dark Cetaceans</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #e0e0e0;
+            color: #000000;
+        }
+        .header {
+            background-color: #1d1d20;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0px 4px 6px rgba(255, 255, 255, 0.2);
+        }
+        .container {
+            display: flex;
+            max-width: 1000px;
+            margin: 20px auto;
+            background: #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0px 4px 12px rgba(255, 255, 255, 0.3);
+        }
+        .sidebar {
+            width: 25%;
+            background-color: #1d1d20;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .sidebar a {
+            display: block;
+            padding: 12px;
+            text-decoration: none;
+            color: white;
+            border-radius: 6px;
+            transition: 0.3s;
+            background-color: #444;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            background-color: #fff;
+            color: #000;
+        }
+        .content {
+            width: 75%;
+            padding: 20px;
+            background-color: #a3a3a3;
+        }
+        .content img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            display: block;
+            margin-top: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.3);
+        }
+        .footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+            font-size: 16px;
+            box-shadow: 0px -4px 6px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+    <script>
+        function showContent(type) {
+            const content = {
+                "orca": {
+                    title: "Orcinus orca (Killer Whale)",
+                    text: "Orcinus orca, commonly known as the killer whale, is a highly intelligent apex predator. It exhibits complex social structures within pods and employs sophisticated hunting strategies. Found in diverse marine environments worldwide, orcas are known for their distinctive black and white coloration and vocal communication abilities.",
+                    image: "orca.jpg"
+                },
+                "pilot-whale": {
+                    title: "Globicephala spp. (Pilot Whale)",
+                    text: "Pilot whales belong to the genus Globicephala, which includes two species: the long-finned (G. melas) and short-finned (G. macrorhynchus) pilot whales. They are known for their strong social bonds and group behaviors. These cetaceans are deep divers, often preying on squid and fish.",
+                    image: "pilot.jpg"
+                },
+                "pseudorca": {
+                    title: "Pseudorca crassidens (False Killer Whale)",
+                    text: "Pseudorca crassidens, commonly known as the false killer whale, shares morphological similarities with orcas but is smaller in size. It is a highly social cetacean, often forming mixed-species groups with dolphins. False killer whales are known for their cooperative hunting techniques and vocalizations.",
+                    image: "false_kw.webp"
+                }
+            };
+            document.getElementById("content-title").innerText = content[type].title;
+            document.getElementById("content-text").innerText = content[type].text;
+            document.getElementById("content-image").src = content[type].image;
+        }
+    </script>
+</head>
+<body>
+    <div class="header">Blackfish - Dark Cetaceans</div>
+    <div class="container">
+        <div class="sidebar">
+            <a onclick="showContent('orca')">Orcinus orca (Killer Whale)</a>
+            <a onclick="showContent('pilot-whale')">Globicephala spp. (Pilot Whale)</a>
+            <a onclick="showContent('pseudorca')">Pseudorca crassidens (False Killer Whale)</a>
+        </div>
+        <div class="content">
+            <h2 id="content-title">Orcinus orca (Killer Whale)</h2>
+            <p id="content-text">Orcinus orca, commonly known as the killer whale, is a highly intelligent apex predator. It exhibits complex social structures within pods and employs sophisticated hunting strategies. Found in diverse marine environments worldwide, orcas are known for their distinctive black and white coloration and vocal communication abilities.</p>
+            <img id="content-image" src="orca.jpg" alt="Orca">
+        </div>
+    </div>
+    <div class="footer">Copyright @M. Izzuddin Fathusysyifa'</div>
+</body>
+</html>

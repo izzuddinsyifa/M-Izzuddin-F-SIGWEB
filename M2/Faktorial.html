@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faktorial Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="form-container">
+        <h2>Hitung Faktorial</h2>
+        <p>Masukkan angka positif:</p>
+        <input type="number" id="input" placeholder="Contoh: 5" />
+        <button onclick="hitung()">Hitung</button>
+        <p id="hasil"></p>
+    </div>
+
+    <script>
+        function hitung() {
+            const num = parseInt(document.getElementById('input').value);
+            const resultElement = document.getElementById('hasil');
+
+            if (isNaN(num) || num < 0) {
+                resultElement.style.color = 'red';
+                resultElement.innerText = 'Masukkan angka positif yang valid';
+                return;
+            }
+
+            let factorial = 1;
+            for (let i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+
+            resultElement.style.color = '#333';
+            resultElement.innerText = `Faktorial dari ${num} adalah: ${factorial}`;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bilangan Prima</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="form-container">
+        <h2>Bilangan Prima</h2>
+        <p>Masukkan sebuah angka:</p>
+        <input type="number" id="number" />
+        <button onclick="showPrimes()">Tampilkan Bilangan Prima</button>
+        <p id="output"></p>
+    </div>
+
+    <script>
+        function isPrime(num) {
+            if (num < 2) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function showPrimes() {
+            const number = parseInt(document.getElementById('number').value);
+            const primes = [];
+            for (let i = 1; i <= number; i++) {
+                if (isPrime(i)) primes.push(i);
+            }
+            document.getElementById('output').innerText = `Bilangan prima: ${primes.join(', ')}`;
+        }
+    </script>
+</body>
+</html>
+
