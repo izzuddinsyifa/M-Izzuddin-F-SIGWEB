@@ -1,38 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<html>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>LeafletJS</title>
+    <title>LeafletJS - Drawing Tools with Area Popup</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://open-source.extive.eu/micro-interaction-theme.css">
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" /> 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" ></script>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Leaflet.Draw CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+    
     <style>
         #map {
             width: 100%;
             height: 1024px;
         }
+        body {
+            margin: 0;
+            padding: 0;
+        }
     </style>
 </head>
 <body>
-    <div id="map">
-        <script>        
-            var map = L.map('map',{ 
-            center: [-7.79558, 110.36949], 
-            zoom: 12 
-            }); 
-    
-            L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {attribution: '&copy; <ahref="http://osm.org/copyright">OpenStreetMap</ahref=> contributors' }).addTo(map); 
-        </script>
-    </div>
-    
+    <!-- Peta -->
+    <div id="map"></div>
 
-    <script src="https://open-source.extive.eu/micro-interaction.js'"></script>
-    <script src="" async defer></script>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Leaflet.Draw JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
+    
+    <!-- Leaflet.GeometryUtil untuk menghitung luas -->
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-geometryutil@0.9.4/dist/leaflet.geometryutil.min.js"></script>
+    
+    <script>
+        // Inisialisasi peta
+        var map = L.map('map', {
+            center: [-7.79558, 110.36949], // Koordinat Yogyakarta
+            zoom: 12
+        });
+
+        // Menambahkan tile layer (OpenStreetMap)
+        L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // FeatureGroup untuk menyimpan elemen yang digambar
+        var drawnItems = new L.FeatureGroup();
+        map.addLayer(drawnItems);
+
+        // Menginisialisasi alat gambar (Leaflet.Draw)
+        var drawControl = new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems, // FeatureGroup untuk diedit
+                poly: {
+                    allowIntersection: false // Mencegah garis berpotongan
+                }
+            },
+            draw: {
+                polygon: {
+                    allowIntersection: false, // Mencegah polygon berpotongan
+                    showArea: true // Menampilkan area polygon
+                },
+                polyline: false, // Nonaktifkan polyline
+                rectangle: false, // Nonaktifkan rectangle
+                circle: false, // Nonaktifkan circle
+                marker: false, // Nonaktifkan marker
+                circlemarker:false
+            }
+        });
+        map.addControl(drawControl);
+
+        // Fungsi untuk menghitung luas polygon
+        function calculateArea(layer) {
+            if (layer instanceof L.Polygon) {
+                var area = L.GeometryUtil.geodesicArea(layer.getLatLngs()[0]);
+                return (area / 1000000).toFixed(2) + " km²"; // Konversi ke km²
+            }
+            return "-";
+        }
+
+        // Event listener untuk menyimpan hasil gambar
+        map.on(L.Draw.Event.CREATED, function (event) {
+            var layer = event.layer; // Elemen yang digambar
+            drawnItems.addLayer(layer); // Menambahkan elemen ke FeatureGroup
+
+            // Jika elemen adalah polygon, hitung luas dan tambahkan popup
+            if (layer instanceof L.Polygon) {
+                var area = calculateArea(layer);
+                layer.bindPopup("Luas Polygon: " + area).openPopup(); // Tampilkan popup dengan luas
+            }
+        });
+
+        // Event listener untuk mengedit elemen
+        map.on(L.Draw.Event.EDITED, function (event) {
+            var layers = event.layers; // Elemen yang diedit
+            layers.eachLayer(function (layer) {
+                if (layer instanceof L.Polygon) {
+                    var area = calculateArea(layer);
+                    layer.setPopupContent("Luas Polygon: " + area); // Perbarui isi popup
+                }
+            });
+        });
+
+        // Event listener untuk menghapus elemen
+        map.on(L.Draw.Event.DELETED, function (event) {
+            // Tidak ada tindakan khusus saat elemen dihapus
+        });
+    </script>
 </body>
-
 </html>
