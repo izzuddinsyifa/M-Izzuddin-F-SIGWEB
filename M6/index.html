@@ -14,19 +14,110 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
     
     <style>
+        :root {
+            --box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.08);
+            --transition: all 0.5s ease;
+            --border-radius: 10px;
+        }
+
         #map {
             width: 100%;
-            height: 1024px;
+            height: calc(100vh - 65px);
         }
+
         body {
             margin: 0;
             padding: 0;
         }
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .header-section {
+            height: 65px;
+            position: relative;
+            z-index: 1000;
+        }
+
+        #map-container {
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 20px;
+                line-height: 60px;
+            }
+
+            .header-section {
+                height: 60px;
+                padding: 10px;
+            }
+
+            #map {
+                height: calc(100vh - 60px);
+            }
+        }
+
+        .custom-btn {
+            position: fixed;
+            top: 0.5rem;
+            right: 2rem;
+            width: 100px; 
+            height: 50px;
+            border-radius: 10px; 
+            background-color: #fff;
+            color: #2c3e50;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 1rem;
+            text-decoration: none;
+        }
+
     </style>
 </head>
 <body>
-    <!-- Peta -->
-    <div id="map"></div>
+    <!-- NAVBAR -->
+    <section id="header" class="min-vh-100 d-flex align-items-center text-center header-section">
+        <div class="header header-expand-lg sticky-top">
+            <div class="container">
+                <h1><i class="fas fa-map" href="index.html"></i> Polygon-meter!</h1>
+            </div>
+        </div>
+    </section>
+
+    <a href="../index.html" target="_blank" class="btn custom-btn" role="button">
+        Home
+    </a>
+
+    <!-- Map Section -->
+    <section id="map" class="min-vh-100 d-flex align-items-center text-center section-padding">
+        <div class="container">
+            <div id="map"></div>
+        </div>
+    </section>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -70,10 +161,15 @@
                 rectangle: false, // Nonaktifkan rectangle
                 circle: false, // Nonaktifkan circle
                 marker: false, // Nonaktifkan marker
-                circlemarker:false
+                circlemarker: false
             }
         });
         map.addControl(drawControl);
+
+        var tooltip = L.tooltip()
+            .setLatLng([-7.79558, 110.36949])
+            .setContent('Selamat Datang di Website ini</br> Silahkan bentuk Polygon yang akan diukur luasnya')
+            .addTo(map);
 
         // Fungsi untuk menghitung luas polygon
         function calculateArea(layer) {
