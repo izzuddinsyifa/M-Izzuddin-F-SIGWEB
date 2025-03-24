@@ -285,7 +285,7 @@
                 bar.style.width = width;
             }, 100);
         });
-        // Smooth scrolling with offset
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -298,13 +298,12 @@
                 });
             });
         });
-        // Add circular progress animation
+
         document.querySelectorAll('.circular-progress').forEach(progress => {
             const value = progress.style.getPropertyValue('--progress') || '80%';
             progress.style.background = `conic-gradient(var(--accent) ${value}, #e0e0e0 0%)`;
         });
 
-        // Active link highlighting
         window.addEventListener('scroll', () => {
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
@@ -323,14 +322,12 @@
             });
         });
 
-        // Read more toggle
         document.getElementById('read-more').addEventListener('click', () => {
             const moreText = document.querySelector('.more-text');
             moreText.style.display = moreText.style.display === 'none' ? 'inline' : 'none';
             document.getElementById('read-more').textContent = moreText.style.display === 'none' ? 'Read More' : 'Read Less';
         });
 
-        // Skill card hover
         document.querySelectorAll('.skill-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
                 card.querySelector('.skill-details').style.display = 'block';
@@ -340,7 +337,6 @@
             });
         });
 
-        // Back to top button
         const backToTopButton = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
@@ -348,15 +344,13 @@
         backToTopButton.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
-        // Initialize AOS
+        
         AOS.init({
             duration: 800,
             once: true,
             offset: 120
         });
 
-        // Initialize particles.js
         particlesJS.load('particles-js', {
             "particles": {
                 "number": {"value": 40},
