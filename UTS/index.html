@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UTS SIGWEB M. Izzuddin Fathusysyifa'</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-easyprint/src/bundle.js">
+</head>
+
+<body>
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <h1 class="navbar-brand text-warning" href="#profil">Ujian Tengah Semester</h1>
+        </div>
+    </nav>
+
+    <!-- DATA DIRI -->
+    <section id="profil" class="d-flex">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center section-padding">
+                <h1>Profil</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8">
+                    <table class="table table-bordered table-striped">
+                        <tbody>
+                            <tr>
+                                <th scope="row">Nama</th>
+                                <td>M. Izzuddin Fathusysyifa'</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">NIM</th>
+                                <td>21/473706/TK/52216</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- KEGIATAN PRAKTIKUM -->
+    <section id="praktikum" class="min-vh-100 d-flex section-padding">
+        <div class="container"><h1>Kegiatan Praktikum</h1>
+        <div class ="row">
+                <h2>Minggu 1 - 3</h2>
+                <p>Dasar-Dasar HTML, CSS, dan WIX.</p>
+                <ul>
+                    <li><strong>HTML:</strong> Mempelajari struktur dasar dokumen HTML, elemen-elemen penting seperti heading, paragraf, tabel, dan form.</li>
+                    <li><strong>CSS:</strong> Memahami cara memberikan gaya pada elemen HTML, termasuk penggunaan warna, font, margin, padding, dan layout.</li>
+                    <li><strong>WIX:</strong> Menggunakan platform WIX untuk membuat website dengan antarmuka drag-and-drop yang mudah digunakan.</li>
+                </ul>
+            </div>
+            <div class="row">
+                <h2>Minggu 4</h2>
+                <p>Dasar-Dasar JavaScript.</p>
+                <ul>
+                    <li><strong>JavaScript:</strong> Memahami dasar-dasar pemrograman JavaScript, termasuk variabel, tipe data, operator, dan struktur kontrol.</li>
+                    <li><strong>DOM Manipulation:</strong> Mempelajari cara mengubah konten dan gaya elemen HTML menggunakan JavaScript.</li>
+                    <li><strong>Event Handling:</strong> Memahami cara menangani event seperti klik, hover, dan input pada elemen HTML.</li>
+            </div>
+            <div class="row">
+                <h2>Minggu 5</h2>
+                <p>Penggunaan Bootstrap.</p>
+                <ul>
+                    <p>Mempelajari penggunaan framework CSS Bootstrap untuk mempercepat pengembangan antarmuka responsif. Materi mencakup pemahaman sistem grid Bootstrap untuk membuat layout yang responsif serta penggunaan berbagai komponen siap pakai seperti navbar, card, dan modal untuk meningkatkan tampilan dan fungsionalitas website.</p>
+                </ul>
+                </div>
+            <div class="row">
+                <h2>Minggu 6 - 7</h2>
+                <p>Penggunaan Leaflet.</p>
+                <ul>
+                    <p>Mempelajari penggunaan Leaflet untuk membuat peta interaktif. Materi mencakup cara menambahkan layer peta, marker, dan popup pada peta, serta penggunaan kontrol untuk navigasi dan pengukuran jarak pada peta.</p>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- DTGD -->
+    <section id="pendidikan" class="min-vh-100 d-flex">
+        <div class="container">
+            <div class="row justify-content-center m-3">
+                <div class="col-12 col-md-8 col-lg-6 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://geodesi.ugm.ac.id/wp-content/uploads/sites/8/2017/08/SAVE_20170829_134406.jpeg" 
+                             class="card-img-top border border-4 border-primary" 
+                             alt="Logo UGM" />
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                Program Sarjana Teknik Geodesi - Universitas Gadjah Mada | <i>2021-Sekarang</i>
+                            </h5>
+                            <h6 class="card-subtitle mb-3 text-muted">Mahasiswa Aktif</h6>
+                            <p class="card-text">
+                                Sebagai mahasiswa Teknik Geodesi, saya telah mempelajari berbagai aspek terkait pengukuran 
+                                geospasial, pemetaan, dan analisis data spasial. Saya juga terlibat dalam berbagai kegiatan 
+                                praktikum dan proyek yang memberikan pengalaman langsung dalam penerapan teknologi geodesi.
+                            </p>
+                            <a href="https://geodesi.ugm.ac.id/id" class="btn btn-primary">Kunjungi Situs Resmi Geodesi UGM</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PETA INTERAKTIF -->
+    <section id="peta" class="min-vh-100 d-flex">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center section-padding">
+                <h1 class="mb-4">Peta Interaktif Kampus UGM</h1>
+                <p class="lead mb-5">5 Fakultas di UGM</p>
+            </div>
+            <div class="row"></div>
+                <div id="map" style="height: 600px; border-radius: 15px; box-shadow: 0 0 20px rgba(0,0,0,0.1);"></div>
+            </div>
+        </div>
+        <script>
+            var map = L.map('map', {
+                zoomControl: false
+            }).setView([-7.770717, 110.377593], 15);
+
+            L.control.zoom({
+                position: 'bottomright'
+            }).addTo(map);
+
+            var osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                maxZoom: 19,
+                attribution: '© OpenStreetMap contributors'
+            });
+
+            var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            });
+
+            var baseMaps = {
+                "OpenStreetMap": osm,
+                "Satellite": satellite
+            };
+
+            osm.addTo(map);
+            L.control.layers(baseMaps, null, {
+                position: 'bottomright'
+            }).addTo(map);
+
+            const customPopup = {
+                'maxWidth': '300',
+                'className': 'custom-popup'
+            }
+
+            function createCustomIcon(color, label) {
+                return L.divIcon({
+                    className: 'custom-div-icon',
+                    html: `
+                        <div style="position: relative; width: 40px; height: 40px;">
+                            <svg viewBox="0 0 24 24" style="width: 40px; height: 40px;">
+                                <path d="M12 0C7.58 0 4 3.58 4 8c0 5.5 8 16 8 16s8-10.5 8-16c0-4.42-3.58-8-8-8z" 
+                                    fill="${color}" stroke="white" stroke-width="1"/>
+                                <circle cx="12" cy="8" r="3" fill="white"/>
+                            </svg>
+                            <div style="position: absolute; top: -5px; left: 50%; transform: translateX(-50%); 
+                                      background-color: white; padding: 2px 4px; border-radius: 3px; 
+                                      font-size: 10px; font-weight: bold; white-space: nowrap;
+                                      border: 1px solid ${color};">
+                                ${label}
+                            </div>
+                        </div>`,
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 40],
+                    popupAnchor: [0, -35]
+                });
+            }
+
+            // Markers with labels
+            var teknik = L.marker([-7.765490, 110.372109], {icon: createCustomIcon('#FF4136', 'Teknik')}).addTo(map)
+                .bindPopup('<div class="popup-content"><h3>Fakultas Teknik</h3><img src="https://ugm.ac.id/wp-content/uploads/2024/04/ftoke-765x510.jpg" width="100%" style="border-radius: 8px; margin-bottom: 10px;"><p>Fakultas Teknik Universitas Gadjah Mada</p><p><a href="https://maps.app.goo.gl/QcwUEque8rgPzi6b6" target="_blank">Buka di Google Maps</a></p></div>', customPopup);
+
+            var mipa = L.marker([-7.767102251781534, 110.37593480296796], {icon: createCustomIcon('#2ECC40', 'MIPA')}).addTo(map)
+                .bindPopup('<div class="popup-content"><h3>FMIPA</h3><img src="https://mipa.ugm.ac.id/wp-content/uploads/sites/28/mipa2.png" width="100%" style="border-radius: 8px; margin-bottom: 10px;"><p>Fakultas MIPA Universitas Gadjah Mada</p><p><a href="https://maps.app.goo.gl/ZUrgxUVBDBmfKjaQ7" target="_blank">Buka di Google Maps</a></p></div>', customPopup);
+
+            var kedokteran = L.marker([-7.769491765619375, 110.37423116241823], {icon: createCustomIcon('#0074D9', 'FK')}).addTo(map)
+                .bindPopup('<div class="popup-content"><h3>Fakultas Kedokteran</h3><img src="https://sangjuaraschool.com/blog/wp-content/uploads/2024/04/Pintu-Kesuksesan-Masuk-Kedokteran-UGM.png" width="100%" style="border-radius: 8px; margin-bottom: 10px;"><p>Fakultas Kedokteran Universitas Gadjah Mada</p><p><a href="https://maps.app.goo.gl/vGBxJiXF6rCVhjRH8" target="_blank">Buka di Google Maps</a></p></div>', customPopup);
+
+            var hukum = L.marker([-7.770402634553614, 110.38094675987001], {icon: createCustomIcon('#B10DC9', 'Hukum')}).addTo(map)
+                .bindPopup('<div class="popup-content"><h3>Fakultas Hukum</h3><img src="https://law.ugm.ac.id/wp-content/uploads/sites/9/2021/11/DSC00037-1024x683.jpg" width="100%" style="border-radius: 8px; margin-bottom: 10px;"><p>Fakultas Hukum Universitas Gadjah Mada</p><p><a href="https://maps.app.goo.gl/MdX3KMpsY7S1zp9U7" target="_blank">Buka di Google Maps</a></p></div>', customPopup);
+
+            var isipol = L.marker([-7.769472100165794, 110.37994096270376], {icon: createCustomIcon('#FF851B', 'FISIPOL')}).addTo(map)
+                .bindPopup('<div class="popup-content"><h3>FISIPOL</h3><img src="https://fisipol.ugm.ac.id/wp-content/uploads/sites/18/2024/04/1dkYos7g.jpeg" width="100%" style="border-radius: 8px; margin-bottom: 10px;"><p>Fakultas Ilmu Sosial dan Politik UGM</p><p><a href="https://maps.app.goo.gl/MLegZ3cTcB9R68ns7" target="_blank">Buka di Google Maps</a></p></div>', customPopup);
+
+            L.control.scale({
+                position: 'bottomleft',
+                imperial: false
+            }).addTo(map);
+        </script>
+    </section>
+
+    <!-- VALIDASI PEKERJAAN -->
+    <section id="validasi" class="min-vh-100 d-flex">
+        <div class="container">
+            <div class="row align-items-center justify-content-center text-center section-padding">
+                <h1>Validasi Pekerjaan</h1>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <div class="card p-4 shadow-sm">
+                        <h2>Validasi Pekerjaan Selesai</h2>
+                        <p>Harap isikan password dibawah untuk menvalidasi pekerjaan anda telah selesai!</p>
+                        <form id="jobForm" onsubmit="return validateForm()">
+                            <div class="form-group mb-3">
+                                <label for="password" class="form-label">Password:</label>
+                                <input type="password" class="form-control" id="password" name="password">
+                                <small class="text-danger" id="errorText"></small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function validateForm() {
+            var password = document.getElementById('password').value;
+            if (password === 'Selesai') {
+                return true;
+            } else {
+                document.getElementById('errorText').textContent = 'Password tidak valid. Harap masukkan password yang benar!';
+                return false;
+            }
+        }
+        </script>
+    
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+  </body>
+</html>

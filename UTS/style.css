@@ -1,0 +1,190 @@
+
+:root {
+    --c-dark: #3b2f2f;
+    --c-brand: #b88a44;
+    --c-brand-light: #d19d4f;
+    --c-brand-rgb: 227, 193, 119;
+    --c-body: #e1dad0;
+    --c-body-rgb: 225, 218, 208;
+    --c-accent: #658d65;
+    --c-accent-rgb: 101, 141, 101;
+    --c-bg: #efe1cb;
+    --font-primary: sans-serif;
+    --box-shadow: 0px 15px 25px rgba(0,0,0,0.08);
+    --transition: all 0.5s ease;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.7;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(var(--c-body-rgb), 0.807), rgba(var(--c-body-rgb), 0.638)),url('../image/bg2.jpeg'); /* Ganti dengan URL gambar Anda */
+    background-size: cover; /* Gambar menyesuaikan ukuran */
+    background-position: center; /* Memposisikan gambar */
+    background-attachment: fixed; /* Membuat background tetap */
+    z-index: 0; /* Membuatnya berada di belakang konten */
+    opacity: 1; /* Transparansi jika dibutuhkan */
+    }
+
+h1, .h1 {
+    z-index: 2;
+    position: relative;
+    color: var(--c-dark);
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+h2, .h2 {
+    z-index: 2;
+    position: relative;
+    font-family: 'Georgia', serif;
+    color: var(--c-dark);
+    font-weight: 600;
+    font-style: italic;
+}
+
+h3, .h3 {
+    z-index: 2;
+    position: relative;
+    font-family: 'Georgia', serif;
+    color:rgb(192, 192, 192);
+    font-size: smaller;
+}
+
+.custom-container {
+    max-width: 1000px;
+    margin: 0 auto; /* Untuk mengatur kontainer ke tengah */
+}
+a {
+    text-decoration: none;
+    color: var(--c-brand);
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+    -moz-transition: var(--transition);
+    -ms-transition: var(--transition);
+    -o-transition: var(--transition);
+}
+
+a:hover {
+    color: var(--c-brand-light);
+}
+
+/* General styles */
+.section-padding {
+    padding: 60px 0;
+    position: relative;
+  }
+
+.text-content {
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  text-align: justify;
+  padding: 0 20px;
+}
+
+
+
+.text-box {
+    position: absolute;
+    width: 800px;
+    height: 160px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -39%);
+    background-color: rgba(255, 255, 255, 0.7);
+    /*Warnaputihsemi-transparan*/padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    -webkit-transform: translate(-50%, -39%);
+    -moz-transform: translate(-50%, -39%);
+    -ms-transform: translate(-50%, -39%);
+    -o-transform: translate(-50%, -39%);
+}
+
+/* NAVBAR */
+.navbar {
+    box-shadow: var(--box-shadow);
+    background-color: var(--c-dark);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--c-brand-light);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--c-brand);
+}
+
+
+
+/* BTN */
+.btn {
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border-width: 2px;
+    padding: 10px 24px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.btn-brand {
+    background-color: var(--c-brand);
+    border-color: var(--c-dark);
+    color: var(--c-dark);
+}
+
+.btn-brand:hover {
+    background-color: var(--c-brand-light);
+    border-color: var(--c-dark);
+    color: black;
+}
+
+/* SECTION TITLE */
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title .line {
+    width: 60px;
+    height: 4px;
+    background-color: var(--c-brand);
+    margin: 16px auto 24px auto;
+}
+
+.section-title p {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.popup-content {
+    padding: 10px;
+}
+.popup-content h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 1.2em;
+}
+.popup-content p {
+    margin-top: 5px;
+    color: #666;
+}
+.leaflet-popup-content-wrapper {
+    border-radius: 10px;
+    box-shadow: 0 3px 14px rgba(0,0,0,0.2);
+}
+.custom-div-icon {
+    background: none;
+    border: none;
+}
